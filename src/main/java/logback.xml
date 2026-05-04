@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Cấu hình mặc định cho tất cả các logger -->
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- Cấu hình riêng cho package banksystem để hiển thị DEBUG level -->
+    <!-- Bạn có thể thay đổi level ở đây khi cần gỡ lỗi chi tiết hơn -->
+    <logger name="banksystem" level="debug" additivity="false">
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+</configuration>
